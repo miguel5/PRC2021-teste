@@ -1,0 +1,27 @@
+PREFIX : <http://www.semanticweb.org/miguel/ontologies/2021/emd#>
+
+SELECT (COUNT(*) as ?Triples)
+WHERE  { 
+	?s a :EMD .
+}
+
+
+2 -
+
+SELECT (COUNT(*) as ?Triples)
+WHERE  { 
+	?s rdf:type :EMD ;
+       :resultado "True" . 
+    
+}
+
+
+3 -
+
+SELECT (COUNT(*) as ?Triples)
+WHERE  { 
+	?s rdf:type :EMD ;
+    :pertenceAoAtleta ?a.  
+    ?a :genero  ?g .
+}
+group by ?g 
