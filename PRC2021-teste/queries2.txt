@@ -1,0 +1,42 @@
+----- 1 ------
+
+construct {
+    ?f1 :irmao ?f2 .
+    ?f2 :irmao ?f1 .
+} where {
+    ?f1 :temProgenitor ?p1.
+    ?f2 :temProgenitor ?p1.
+}
+
+
+------ 2 -------
+
+construct {
+    ?p3 :bisavo ?f .
+} where {
+    ?f :temProgenitor ?p1 .
+    ?p1 :temProgenitor ?p2 .
+    ?p2 :temProgenitor ?p3 .
+}
+
+-------- 3 --------
+
+construct {
+    ?f1 :descendente ?f2 .
+} where {
+    ?f2 :eProgenitorDe ?f1 .
+}
+
+
+------- 4 ---------
+
+
+-------- 6 ----------
+
+construct {
+    :José_Carlos_Leite_Ramalho_1967 :temRelacaoCom ?p .
+    :José_Carlos_Leite_Ramalho_1967 :temRelacaoCom ?p2 .
+} where {
+    ?p ?r1 :José_Carlos_Leite_Ramalho_1967 .
+    :José_Carlos_Leite_Ramalho_1967 ?r2 ?p2 .
+}
